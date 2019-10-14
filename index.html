@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>YouTube Thumbnail Downloader</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <h1>YouTube Thumbnail Downloader</h1>
+      <input id="YTinput" type="text" size="80" placeholder="Input YouTube video link. e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+      <br>
+      <button onclick="TB_input();" id="YTsubmit">Submit</button>
+      <button onclick="TB_clear();" id="YTclear">Clear</button>
+      <button onclick="TB_example();" id="YTexample">Example</button>
+    </div>
+    <p>Please Enter YouTube video link above. You can enter like these:</p>
+    <ul>
+      <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a></li>
+      <li>https://youtu.be/dQw4w9WgXcQ <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">LINK</a></li>
+    </ul>
+    <!-- Result -->
+    <hr>
+    <div id="result_top">
+      <h2>Result</h2>
+      <div id="result_main"></div>
+    </div>
+    <!-- Source -->
+    <hr>
+    <div id="source">
+      <span>Source: </span>
+      <ul>
+        <li><a href="https://gist.github.com/takien/4077195" target="_blank">https://gist.github.com/takien/4077195</a></li>
+        <li><a href="https://stackoverflow.com/a/2068371" target="_blank">https://stackoverflow.com/a/2068371</a></li>
+        <li><a href="https://www.html5rocks.com/en/tutorials/cors" target="_blank">https://www.html5rocks.com/en/tutorials/cors</a></li>
+      </ul>
+    </div>
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
