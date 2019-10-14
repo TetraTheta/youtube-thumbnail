@@ -79,34 +79,34 @@ function get_image() {
   if (thumb.includes(true)) {
     var inner = '';
     if (thumb[0]) { // Player Background
-      inner += '<h4>Player Background</h4>' + '<img src="https://i1.ytimg.com/vi/' + video_id + '/0.jpg" download><br>';
+      inner += '<h4>Player Background</h4>' + '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/0.jpg" download><br>';
     }
     if (thumb[1] || thumb[2] || thumb[3]) { // Start +  Middle + End
       inner += '<div class="result_sme">';
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/1.jpg" download> ';
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/2.jpg" download> ';
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/3.jpg" download> ';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/1.jpg" download> ';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/2.jpg" download> ';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/3.jpg" download> ';
       inner += '</div>';
     }
     if (thumb[4]) { // Normal Quality (120x90)
       inner += '<h4>Normal Quality (120x90)</h4>'
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/default.jpg" download><br>';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/default.jpg" download><br>';
     }
     if (thumb[5]) { // Medium Quality (320x180)
       inner += '<h4>Medium Quality (320x180)</h4>'
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/mqdefault.jpg" download><br>';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/mqdefault.jpg" download><br>';
     }
     if (thumb[6]) { // High Quality (480x360)
       inner += '<h4>High Quality (480x360)</h4>'
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/hqdefault.jpg" download><br>';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/hqdefault.jpg" download><br>';
     }
     if (thumb[7]) { // Standard Quality (Optional) (640x480)
       inner += '<h4>Standard Quality (Optional) (640x480)</h4>'
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/sddefault.jpg" download><br>';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/sddefault.jpg" download><br>';
     }
     if (thumb[7]) { // Maximum Quality (Optional) (1280x720 or 1920x1080)
       inner += '<h4>Maximum Quality (Optional) (1280x720 or 1920x1080)</h4>'
-      inner += '<img src="https://i1.ytimg.com/vi/' + video_id + '/maxresdefault.jpg" style="width:75%;" download><br>';
+      inner += '<img class="res_img" src="https://i1.ytimg.com/vi/' + video_id + '/maxresdefault.jpg" download><br>';
     }
     document.getElementById('result_main').innerHTML = inner;
   }

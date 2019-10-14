@@ -6,19 +6,24 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div style="text-align: center;">
+    <div class="content" style="text-align: center;">
       <h1>YouTube Thumbnail Downloader</h1>
-      <input id="YTinput" type="text" size="80" placeholder="Input YouTube video link. e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-      <br>
-      <button onclick="TB_input();" id="YTsubmit">Submit</button>
-      <button onclick="TB_clear();" id="YTclear">Clear</button>
-      <button onclick="TB_example();" id="YTexample">Example</button>
+      <div class="input">
+        <input id="YTinput" type="text" placeholder="Input YouTube video link. e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+      </div>
+      <div class="buttons">
+        <button onclick="TB_input();" id="YTsubmit">Submit</button>&nbsp;
+        <button onclick="TB_clear();" id="YTclear">Clear</button>&nbsp;
+        <button onclick="TB_example();" id="YTexample">Example</button>
+      </div>
     </div>
-    <p>Please Enter YouTube video link above. You can enter like these:</p>
-    <ul>
-      <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a></li>
-      <li>https://youtu.be/dQw4w9WgXcQ <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">LINK</a></li>
-    </ul>
+    <div class="example">
+      <p>Please Enter YouTube video link above. You can enter like these:</p>
+      <ul>
+        <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a></li>
+        <li>https://youtu.be/dQw4w9WgXcQ <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">LINK</a></li>
+      </ul>
+    </div>
     <!-- Result -->
     <hr>
     <div id="result_top">
