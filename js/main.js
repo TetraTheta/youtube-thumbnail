@@ -36,7 +36,7 @@ function result_clear() {
   var result_main = document.getElementById('result_main');
   result_main.parentNode.removeChild(result_main);
   var result_top = document.getElementById('result_top');
-  result_top.innerHTML = '<h2>Result</h2><div id="result_main"></div>'
+  result_top.innerHTML = '<h3>Result</h3><div id="result_main"></div>'
 }
 
 function createCORSRequest(method, url) {
