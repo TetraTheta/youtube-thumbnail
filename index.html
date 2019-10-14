@@ -2,22 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Thumbnail Downloader</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+     <!-- Scripts -->
+     <script type="text/javascript" src="js/material.min.js"></script>
+     <script type="text/javascript" src="js/main.js"></script>
+     <!-- Body -->
     <div class="content" style="text-align: center;">
       <h1>YouTube Thumbnail Downloader</h1>
-      <div class="input">
-        <input id="YTinput" type="text" placeholder="Input YouTube video link. e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+      <div class="input mdl-textfield mdl-js-textfield">
+        <input id="YTinput" class="mdl-textfield__input" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+        <label for="YTinput" class="mdl-textfield__label">Input YouTube video link</label>
       </div>
       <div class="buttons">
-        <button onclick="TB_input();" id="YTsubmit">Submit</button>&nbsp;
-        <button onclick="TB_clear();" id="YTclear">Clear</button>&nbsp;
-        <button onclick="TB_example();" id="YTexample">Example</button>
+        <button onclick="TB_input();" id="YTsubmit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>&nbsp;
+        <button onclick="TB_clear();" id="YTclear" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Clear</button>&nbsp;
+        <button onclick="TB_example();" id="YTexample" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Example</button>
       </div>
     </div>
     <div class="example">
+      <br>
       <p>Please Enter YouTube video link above. You can enter like these:</p>
       <ul>
         <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a></li>
@@ -27,7 +37,7 @@
     <!-- Result -->
     <hr>
     <div id="result_top">
-      <h2>Result</h2>
+      <h3>Result</h3>
       <div id="result_main"></div>
     </div>
     <!-- Source -->
@@ -40,7 +50,5 @@
         <li><a href="https://www.html5rocks.com/en/tutorials/cors" target="_blank">https://www.html5rocks.com/en/tutorials/cors</a></li>
       </ul>
     </div>
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
