@@ -1,52 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark" translate="no">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
     <title>YouTube Thumbnail Downloader</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Open Graph -->
-    <meta property="og:title" content="YouTube Thumbnail Downloader">
-    <meta property="og:site_name" content="YouTube Thumbnail Downloader">
-    <meta property="og:url" content="https://wizwix.github.io/youtubethumbnail">
-    <meta property="og:description" content="You can download YouTube thumbnail images. No additional features. No suspicious things.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://wizwix.github.io/youtubethumbnail/image/preview.png">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Pretendard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <!-- Font Awesome 7 -->
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/fontawesome.solid.min.js"></script>
+    <!-- Site -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="body">
-    <!-- Scripts -->
-    <script type="text/javascript" src="js/material.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- Body -->
-    <div class="content" style="text-align: center;">
-      <h1 class="main_title">YouTube Thumbnail Downloader</h1>
-      <div class="input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input id="YTinput" class="mdl-textfield__input" type="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-        <label for="YTinput" class="mdl-textfield__label">Input YouTube video link</label>
-      </div>
-      <div class="buttons">
-        <button onclick="TB_input();" id="YTsubmit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>&nbsp;
-        <button onclick="TB_clear();" id="YTclear" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Clear</button>&nbsp;
-        <button onclick="TB_example();" id="YTexample" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Example</button>
-      </div>
+  <body>
+    <div class="container-fluid">
+      <header class="sticky-top bg-dark pb-2">
+        <h4 class="text-center pt-1">YouTube Thumbnail Downloader<a class="fs-6 text-decoration-none" onclick="sample()">.</a></h4>
+        <form id="form">
+          <div class="input-group has-validation">
+            <input id="youtube-url" class="form-control" type="text" placeholder="YouTube ID/URL" minlength="11" required="required" />
+            <select id="thumb-type" class="form-select flex-grow-0" style="width: auto !important">
+              <option value="jpg" selected="selected">JPG</option>
+              <option value="webp">WebP</option>
+            </select>
+            <button id="submit" class="btn btn-outline-primary" type="submit">Submit</button>
+            <button id="clear" class="btn btn-outline-secondary" type="button">Clear</button>
+            <div id="youtube-url-invalid" class="invalid-tooltip">Invalid YouTube ID/URL</div>
+          </div>
+        </form>
+      </header>
+      <div id="result" class="row pt-2 g-3 align-items-stretch"></div>
     </div>
-    <div class="example">
-      <br>
-      <p style="margin-bottom:5px">Please Enter YouTube video link above. You can enter like these:</p>
-      <ul>
-        <li>https://www.youtube.com/watch?v=dQw4w9WgXcQ <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">LINK</a></li>
-        <li>https://youtu.be/dQw4w9WgXcQ <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">LINK</a></li>
-      </ul>
-    </div>
-    <!-- Result -->
-    <hr>
-    <div id="result_top">
-      <h3>Result</h3>
-      <div id="result_main"></div>
-    </div>
+    <script src="js/script_body.js"></script>
   </body>
 </html>
