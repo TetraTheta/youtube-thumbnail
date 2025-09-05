@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google" content="notranslate" />
     <title>YouTube Thumbnail Downloader</title>
+    <meta name="description" content="Download YouTube video thumbnail" />
+    <meta name="keywords" content="youtube,thumbnail" />
+    <meta property="og:title" content="YouTube Thumbnail Downloader" />
+    <meta property="og:description" content="Download YouTube video thumbnail" />
+    <meta property="twitter:title" content="YouTube Thumbnail Downloader" />
+    <meta property="twitter:description" content="Download YouTube video thumbnail" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -16,10 +24,10 @@
     <!-- Site -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="mb-5 overflow-y-scroll">
     <div class="container-fluid">
       <header class="sticky-top bg-dark pb-2">
-        <h4 class="text-center pt-1">YouTube Thumbnail Downloader<a class="fs-6 text-decoration-none" onclick="sample()">.</a></h4>
+        <p class="h4 text-center pt-1 mb-0">YouTube Thumbnail Downloader<small><a class="fs-6 text-decoration-none" onclick="sample()">.</a></small></p>
         <form id="form">
           <div class="input-group has-validation">
             <input id="youtube-url" class="form-control" type="text" placeholder="YouTube ID/URL" minlength="11" required="required" />
@@ -35,6 +43,6 @@
       </header>
       <div id="result" class="row pt-2 g-3 align-items-stretch"></div>
     </div>
-    <script src="js/script_body.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
