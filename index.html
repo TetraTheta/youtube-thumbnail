@@ -9,8 +9,11 @@
     <meta name="keywords" content="youtube,thumbnail" />
     <meta property="og:title" content="YouTube Thumbnail Downloader" />
     <meta property="og:description" content="Download YouTube video thumbnail" />
+    <meta property="og:image" content="img/preview.png" />
     <meta property="twitter:title" content="YouTube Thumbnail Downloader" />
     <meta property="twitter:description" content="Download YouTube video thumbnail" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:image" content="img/preview.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap 5 -->
@@ -27,9 +30,14 @@
   <body class="mb-5 overflow-y-scroll">
     <div class="container-fluid">
       <header class="sticky-top bg-dark pb-2">
-        <p class="h4 text-center pt-1 mb-0">YouTube Thumbnail Downloader<small><a class="fs-6 text-decoration-none" onclick="sample()">.</a></small></p>
+        <p class="float-start mt-1">
+          <a href="/"><i class="fa-solid fa-home"></i></a>
+        </p>
+        <p class="h4 text-center pt-1 mb-0">
+          YouTube Thumbnail Downloader<small><a id="sample" class="fs-6 text-decoration-none link-opacity-10 pe-auto" style="cursor: pointer">.</a></small>
+        </p>
         <form id="form">
-          <div class="input-group has-validation">
+          <div class="input-group position-relative">
             <input id="youtube-url" class="form-control" type="text" placeholder="YouTube ID/URL" minlength="11" required="required" />
             <select id="thumb-type" class="form-select flex-grow-0" style="width: auto !important">
               <option value="jpg" selected="selected">JPG</option>
@@ -37,7 +45,6 @@
             </select>
             <button id="submit" class="btn btn-outline-primary" type="submit">Submit</button>
             <button id="clear" class="btn btn-outline-secondary" type="button">Clear</button>
-            <div id="youtube-url-invalid" class="invalid-tooltip">Invalid YouTube ID/URL</div>
           </div>
         </form>
       </header>

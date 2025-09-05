@@ -2,8 +2,9 @@
 // BODY //
 //////////
 document.addEventListener('DOMContentLoaded', getParam)
-document.getElementById('form').addEventListener('submit', () => fetchThumbnail())
+document.getElementById('form').addEventListener('submit', (e) => fetchThumbnail(e))
 document.getElementById('clear').addEventListener('click', () => reset())
+document.getElementById('sample').addEventListener('click', () => sample())
 
 ///////////
 const ThumbnailData = [
@@ -33,7 +34,12 @@ const ThumbnailData = [
     urlKey: 'default',
   },
 ]
+const ViMap = {
+  jpg: 'vi',
+  webp: 'vi_webp',
+}
 Object.freeze(ThumbnailData) // Freeze Quality to prevent modification
+Object.freeze(ViMap)
 
 /**
  * Workaround for '<a download>' does not work with Cross-Origin
@@ -58,22 +64,27 @@ function dlImg(url, name) {
 /**
  * Take value from '#youtube-id' and use it for fetching YouTube video thumbnail
  */
-function fetchThumbnail() {
-  event.preventDefault()
+function fetchThumbnail(e) {
+  e = e ? e : window.event
+  e.preventDefault()
+  
   const input = document.getElementById('youtube-url')
   const type = document.getElementById('thumb-type').value // either 'jpg' or 'webp'
   const res = getYTId(decodeURI(input.value)) // YouTube Video ID or empty string
 
+  if (res.length !== 11) return // length of YouTube Video ID is always 11
+
   console.log(`Detected Video ID: ${res}, Thumbnail Type: ${type}`)
+
+  const result = document.getElementById('result')
+  result.innerHTML = ''
 
   input.value = res
 
   const container = document.createDocumentFragment()
-  const result = document.getElementById('result')
-  result.innerHTML = ''
 
   ThumbnailData.forEach((t) => {
-    const url = `https://i.ytimg.com/vi/${res}/${t.urlKey}.${type}`
+    const url = `https://i.ytimg.com/${ViMap[type]}/${res}/${t.urlKey}.${type}`
 
     const sec = document.createElement('section')
     sec.className = 'col-md-6 col-xl-4 col-xxl-3 d-flex'
@@ -172,8 +183,7 @@ function getYTId(url) {
 function reset() {
   // input
   document.getElementById('youtube-url').value = ''
-  // result
-  // innerHTML doesn't work :(
+  // result - innerHTML doesn't work :(
   const res = document.getElementById('result')
   while (res.lastElementChild) res.removeChild(res.lastElementChild)
 }
